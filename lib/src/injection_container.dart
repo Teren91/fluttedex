@@ -7,36 +7,26 @@ import 'package:fluttedex/src/features/pokemon/domain/usecases/get_pokemon_by_na
 import 'package:fluttedex/src/features/pokemon/data/datasources/pokemon_remote_data_source.dart';
 import 'package:dio/dio.dart';
 
-// Instancia global de GetIt
-final getIt = GetIt.instance;
+// Instancia global de sl
+final sl = GetIt.instance;
 
 Future<void> initializeDependencies() async {
-  // Dio Client
-  getIt.registerSingleton<Dio>(Dio());
+  // BLoC
+  sl.registerFactory(
+      () => PokemonBloc(getPokemons: sl(), getPokemonByName: sl()));
 
-  // Dependencies
-  getIt.registerSingleton<PokemonRemoteDataSource>(
-    PokemonRemoteDataSourceImpl(dio: getIt<Dio>()),
-  );
+  // Casos de Uso
+  sl.registerLazySingleton(() => GetPokemons(sl()));
+  sl.registerLazySingleton(() => GetPokemonByName(sl()));
 
-  getIt.registerSingleton<PokemonRepository>(
-    PokemonRepositoryImpl(remoteDataSource: getIt<PokemonRemoteDataSource>()),
-  );
+  // Repositorio
+  sl.registerLazySingleton<PokemonRepository>(
+      () => PokemonRepositoryImpl(remoteDataSource: sl()));
 
-  // Use cases
-  getIt.registerSingleton<GetPokemons>(
-    GetPokemons(getIt<PokemonRepository>()),
-  );
+  // DataSource
+  sl.registerLazySingleton<PokemonRemoteDataSource>(
+      () => PokemonRemoteDataSourceImpl(dio: sl()));
 
-  getIt.registerSingleton<GetPokemonByName>(
-    GetPokemonByName(getIt<PokemonRepository>()),
-  );
-
-  // Bloc
-  getIt.registerFactory<PokemonBloc>(
-    () => PokemonBloc(
-      getPokemons: getIt<GetPokemons>(),
-      getPokemonByName: getIt<GetPokemonByName>(),
-    ),
-  );
+  // Externo (Dio)
+  sl.registerLazySingleton(() => Dio());
 }
