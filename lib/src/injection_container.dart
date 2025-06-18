@@ -4,6 +4,7 @@ import 'package:fluttedex/src/features/pokemon/domain/repositories/pokemon_repos
 import 'package:fluttedex/src/features/pokemon/data/repositories/pokemon_repository_impl.dart';
 import 'package:fluttedex/src/features/pokemon/domain/usecases/get_pokemons.dart';
 import 'package:fluttedex/src/features/pokemon/domain/usecases/get_pokemon_by_name.dart';
+import 'package:fluttedex/src/features/pokemon/domain/usecases/get_pokemon_detail.dart';
 import 'package:fluttedex/src/features/pokemon/data/datasources/pokemon_remote_data_source.dart';
 import 'package:dio/dio.dart';
 
@@ -13,11 +14,16 @@ final sl = GetIt.instance;
 Future<void> initializeDependencies() async {
   // BLoC
   sl.registerFactory(
-      () => PokemonBloc(getPokemons: sl(), getPokemonByName: sl()));
+      () => PokemonBloc(
+            getPokemons: sl(),
+            getPokemonByName: sl(),
+            getPokemonDetail: sl(),
+          ));
 
   // Casos de Uso
   sl.registerLazySingleton(() => GetPokemons(sl()));
   sl.registerLazySingleton(() => GetPokemonByName(sl()));
+  sl.registerLazySingleton(() => GetPokemonDetail(sl()));
 
   // Repositorio
   sl.registerLazySingleton<PokemonRepository>(
