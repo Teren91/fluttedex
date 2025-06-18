@@ -7,7 +7,7 @@ Este proyecto ha sido desarrollado como una demostración de habilidades en Flut
 
 | Pantalla de Lista	de Pokémons | Pantalla de Detalle de Pokémon |
 |:-----------------------------:|:------------------------------:|
-|![PokemonList](./assets/screenshots/PokemonList) | ![PokemonDetail](./assets/screenshots/PokemonDetail) | ![PokemonDetail2](./assets/screenshots/PokemonDetail2)|
+|![PokemonList](./assets/screenshots/PokemonList.png) | ![PokemonDetail](./assets/screenshots/PokemonDetail.png) | ![PokemonDetail2](./assets/screenshots/PokemonDetail2.png)|
 
 
 ## ✨ Características Principales
