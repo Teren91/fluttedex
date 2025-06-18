@@ -22,15 +22,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Fluttedex',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: BlocProvider(
-        create: (_) => di.sl<PokemonBloc>()..add(FetchPokemons()),
-        child: const PokemonListPage(),
+    return BlocProvider<PokemonBloc>(
+      create: (context) => di.sl<PokemonBloc>()..add(FetchPokemons()),
+      child: MaterialApp(
+        title: 'Fluttedex',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
+        ),
+        home: const PokemonListPage(),
       ),
     );
   }

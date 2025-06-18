@@ -1,3 +1,4 @@
+import 'package:fluttedex/src/features/pokemon/presentation/pages/pokemon_detail_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttedex/src/features/pokemon/presentation/bloc/pokemon_bloc.dart';
@@ -76,7 +77,13 @@ class _PokemonListPageState extends State<PokemonListPage> {
                     trailing: const Icon(Icons.arrow_forward_ios, size: 16),
                     onTap: () {
                       // Navegar al detalle del Pokémon
-                      // Navigator.push(...);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              PokemonDetailPage(nameOrId: pokemon.name),
+                        ),
+                      );
                     },
                   ),
                 );
