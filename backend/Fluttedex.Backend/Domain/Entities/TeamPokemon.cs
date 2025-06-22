@@ -2,7 +2,7 @@ namespace Fluttedex.Backend.Domain.Entities
 {
     public class TeamPokemon
     {
-        public int TeamId { get; set; }
+        public Guid Id { get; set; }
         public int PokemonId { get; set; }
         public int Position { get; set; }
         public DateTime CreatedAt { get; set; }

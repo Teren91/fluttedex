@@ -4,10 +4,10 @@ namespace Fluttedex.Backend.Domain.Interfaces
 {
     public interface ITeamRepository
     {
-        Task<Team?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default);
-        Task<IEnumerable<Team>> GetAllAsync(CancellationToken cancellationToken = default);
-        Task AddAsync(Team team, CancellationToken cancellationToken = default);
-        Task UpdateAsync(Team team, CancellationToken cancellationToken = default);
-        Task DeleteAsync(Guid id, CancellationToken cancellationToken = default);
+        Task<Team?> GetByIdAsync(Guid id);
+        Task<IEnumerable<Team>> GetAllAsync();
+        Task AddAsync(Team team);
+        Task UpdateAsync(Team team);
+        Task DeleteAsync(Guid id);
     }
 }

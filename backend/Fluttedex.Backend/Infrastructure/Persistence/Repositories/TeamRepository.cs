@@ -12,33 +12,33 @@ namespace Fluttedex.Backend.Infrastructure.Persistence.Repositories
             _context = context;
         }
 
-        public async Task<Team?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
+        public async Task<Team?> GetByIdAsync(Guid id)
         {
             return await _context.Teams
-                .Include(t => t.TeamPokemons) // Assuming Team has a Members collection
-                .FirstOrDefaultAsync(t => t.Id == id, cancellationToken);
+                .Include(t => t.TeamPokemon) // Assuming Team has a Members collection
+                .FirstOrDefaultAsync(t => t.Id == id);
         }
-        public async Task<IEnumerable<Team>> GetAllAsync(CancellationToken cancellationToken = default)
+        public async Task<IEnumerable<Team>> GetAllAsync()
         {
-            return await _context.Teams.ToListAsync(cancellationToken);
+            return await _context.Teams.ToListAsync();
         }
-        public async Task AddAsync(Team team, CancellationToken cancellationToken = default)
+        public async Task AddAsync(Team team )
         {
-            await _context.Teams.AddAsync(team, cancellationToken);
-            await _context.SaveChangesAsync(cancellationToken);
+            await _context.Teams.AddAsync(team);
+            await _context.SaveChangesAsync();
         }
-        public async Task UpdateAsync(Team team, CancellationToken cancellationToken = default)
+        public async Task UpdateAsync(Team team )
         {
             _context.Teams.Update(team);
-            await _context.SaveChangesAsync(cancellationToken);
+            await _context.SaveChangesAsync();
         }
-        public async Task DeleteAsync(Guid id, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Guid id )
         {
-            var team = await GetByIdAsync(id, cancellationToken);
+            var team = await GetByIdAsync(id);
             if (team != null)
             {
                 _context.Teams.Remove(team);
-                await _context.SaveChangesAsync(cancellationToken);
+                await _context.SaveChangesAsync();
             }
         }
         

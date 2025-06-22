@@ -10,6 +10,6 @@ namespace Fluttedex.Backend.Domain.Entities
         public DateTime UpdatedAt { get; set; }
 
         public User User { get; set; } = null!;
-        public ICollection<TeamPokemon> TeamPokemons { get; set; } = new List<TeamPokemon>();
+        public ICollection<TeamPokemon> TeamPokemon { get; set; } = new List<TeamPokemon>();
     }
 }
