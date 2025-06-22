@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36203.30 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fluttedex.Backend", "Fluttedex.Backend.csproj", "{9107E1E6-7AED-7FD1-6D04-3B842C6E2230}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9107E1E6-7AED-7FD1-6D04-3B842C6E2230}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9107E1E6-7AED-7FD1-6D04-3B842C6E2230}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9107E1E6-7AED-7FD1-6D04-3B842C6E2230}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9107E1E6-7AED-7FD1-6D04-3B842C6E2230}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6EA76956-7FDC-47C4-A024-0E44BBE6D0B0}
+	EndGlobalSection
+EndGlobal

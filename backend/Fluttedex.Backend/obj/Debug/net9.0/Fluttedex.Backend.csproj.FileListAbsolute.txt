@@ -1,0 +1,9 @@
+C:\Programacion\flutter\fluttedex\backend\Fluttedex.Backend\obj\Debug\net9.0\Fluttedex.Backend.csproj.AssemblyReference.cache
+C:\Programacion\flutter\fluttedex\backend\Fluttedex.Backend\obj\Debug\net9.0\rpswa.dswa.cache.json
+C:\Programacion\flutter\fluttedex\backend\Fluttedex.Backend\obj\Debug\net9.0\Fluttedex.Backend.GeneratedMSBuildEditorConfig.editorconfig
+C:\Programacion\flutter\fluttedex\backend\Fluttedex.Backend\obj\Debug\net9.0\Fluttedex.Backend.AssemblyInfoInputs.cache
+C:\Programacion\flutter\fluttedex\backend\Fluttedex.Backend\obj\Debug\net9.0\Fluttedex.Backend.AssemblyInfo.cs
+C:\Programacion\flutter\fluttedex\backend\Fluttedex.Backend\obj\Debug\net9.0\Fluttedex.Backend.csproj.CoreCompileInputs.cache
+C:\Programacion\flutter\fluttedex\backend\Fluttedex.Backend\obj\Debug\net9.0\Fluttedex.Backend.MvcApplicationPartsAssemblyInfo.cs
+C:\Programacion\flutter\fluttedex\backend\Fluttedex.Backend\obj\Debug\net9.0\Fluttedex.Backend.MvcApplicationPartsAssemblyInfo.cache
+C:\Programacion\flutter\fluttedex\backend\Fluttedex.Backend\obj\Debug\net9.0\Fluttedex.Backend.sourcelink.json
