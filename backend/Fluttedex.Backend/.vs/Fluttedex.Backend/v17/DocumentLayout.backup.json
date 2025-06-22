@@ -1,0 +1,177 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Programacion\\flutter\\fluttedex\\backend\\Fluttedex.Backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9107E1E6-7AED-7FD1-6D04-3B842C6E2230}|Fluttedex.Backend.csproj|c:\\programacion\\flutter\\fluttedex\\backend\\fluttedex.backend\\infrastructure\\persistence\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9107E1E6-7AED-7FD1-6D04-3B842C6E2230}|Fluttedex.Backend.csproj|solutionrelative:infrastructure\\persistence\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9107E1E6-7AED-7FD1-6D04-3B842C6E2230}|Fluttedex.Backend.csproj|c:\\programacion\\flutter\\fluttedex\\backend\\fluttedex.backend\\application\\dtos\\userlogindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9107E1E6-7AED-7FD1-6D04-3B842C6E2230}|Fluttedex.Backend.csproj|solutionrelative:application\\dtos\\userlogindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9107E1E6-7AED-7FD1-6D04-3B842C6E2230}|Fluttedex.Backend.csproj|c:\\programacion\\flutter\\fluttedex\\backend\\fluttedex.backend\\controllers\\teamscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9107E1E6-7AED-7FD1-6D04-3B842C6E2230}|Fluttedex.Backend.csproj|solutionrelative:controllers\\teamscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9107E1E6-7AED-7FD1-6D04-3B842C6E2230}|Fluttedex.Backend.csproj|c:\\programacion\\flutter\\fluttedex\\backend\\fluttedex.backend\\domain\\entities\\team.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9107E1E6-7AED-7FD1-6D04-3B842C6E2230}|Fluttedex.Backend.csproj|solutionrelative:domain\\entities\\team.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9107E1E6-7AED-7FD1-6D04-3B842C6E2230}|Fluttedex.Backend.csproj|c:\\programacion\\flutter\\fluttedex\\backend\\fluttedex.backend\\application\\dtos\\teamdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9107E1E6-7AED-7FD1-6D04-3B842C6E2230}|Fluttedex.Backend.csproj|solutionrelative:application\\dtos\\teamdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9107E1E6-7AED-7FD1-6D04-3B842C6E2230}|Fluttedex.Backend.csproj|c:\\programacion\\flutter\\fluttedex\\backend\\fluttedex.backend\\application\\dtos\\createteamdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9107E1E6-7AED-7FD1-6D04-3B842C6E2230}|Fluttedex.Backend.csproj|solutionrelative:application\\dtos\\createteamdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9107E1E6-7AED-7FD1-6D04-3B842C6E2230}|Fluttedex.Backend.csproj|c:\\programacion\\flutter\\fluttedex\\backend\\fluttedex.backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9107E1E6-7AED-7FD1-6D04-3B842C6E2230}|Fluttedex.Backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9107E1E6-7AED-7FD1-6D04-3B842C6E2230}|Fluttedex.Backend.csproj|c:\\programacion\\flutter\\fluttedex\\backend\\fluttedex.backend\\domain\\interfaces\\iteamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9107E1E6-7AED-7FD1-6D04-3B842C6E2230}|Fluttedex.Backend.csproj|solutionrelative:domain\\interfaces\\iteamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9107E1E6-7AED-7FD1-6D04-3B842C6E2230}|Fluttedex.Backend.csproj|c:\\programacion\\flutter\\fluttedex\\backend\\fluttedex.backend\\infrastructure\\persistence\\repositories\\teamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9107E1E6-7AED-7FD1-6D04-3B842C6E2230}|Fluttedex.Backend.csproj|solutionrelative:infrastructure\\persistence\\repositories\\teamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Team.cs",
+              "DocumentMoniker": "C:\\Programacion\\flutter\\fluttedex\\backend\\Fluttedex.Backend\\Domain\\Entities\\Team.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Team.cs",
+              "ToolTip": "C:\\Programacion\\flutter\\fluttedex\\backend\\Fluttedex.Backend\\Domain\\Entities\\Team.cs",
+              "RelativeToolTip": "Domain\\Entities\\Team.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T16:38:06.828Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TeamsController.cs",
+              "DocumentMoniker": "C:\\Programacion\\flutter\\fluttedex\\backend\\Fluttedex.Backend\\Controllers\\TeamsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TeamsController.cs",
+              "ToolTip": "C:\\Programacion\\flutter\\fluttedex\\backend\\Fluttedex.Backend\\Controllers\\TeamsController.cs",
+              "RelativeToolTip": "Controllers\\TeamsController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwCsAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T16:33:37.549Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TeamDto.cs",
+              "DocumentMoniker": "C:\\Programacion\\flutter\\fluttedex\\backend\\Fluttedex.Backend\\Application\\Dtos\\TeamDto.cs",
+              "RelativeDocumentMoniker": "Application\\Dtos\\TeamDto.cs",
+              "ToolTip": "C:\\Programacion\\flutter\\fluttedex\\backend\\Fluttedex.Backend\\Application\\Dtos\\TeamDto.cs",
+              "RelativeToolTip": "Application\\Dtos\\TeamDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T16:31:49.038Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CreateTeamDto.cs",
+              "DocumentMoniker": "C:\\Programacion\\flutter\\fluttedex\\backend\\Fluttedex.Backend\\Application\\Dtos\\CreateTeamDto.cs",
+              "RelativeDocumentMoniker": "Application\\Dtos\\CreateTeamDto.cs",
+              "ToolTip": "C:\\Programacion\\flutter\\fluttedex\\backend\\Fluttedex.Backend\\Application\\Dtos\\CreateTeamDto.cs",
+              "RelativeToolTip": "Application\\Dtos\\CreateTeamDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T16:29:58.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TeamRepository.cs",
+              "DocumentMoniker": "C:\\Programacion\\flutter\\fluttedex\\backend\\Fluttedex.Backend\\Infrastructure\\Persistence\\Repositories\\TeamRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Persistence\\Repositories\\TeamRepository.cs",
+              "ToolTip": "C:\\Programacion\\flutter\\fluttedex\\backend\\Fluttedex.Backend\\Infrastructure\\Persistence\\Repositories\\TeamRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Persistence\\Repositories\\TeamRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T16:19:06.015Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ITeamRepository.cs",
+              "DocumentMoniker": "C:\\Programacion\\flutter\\fluttedex\\backend\\Fluttedex.Backend\\Domain\\Interfaces\\ITeamRepository.cs",
+              "RelativeDocumentMoniker": "Domain\\Interfaces\\ITeamRepository.cs",
+              "ToolTip": "C:\\Programacion\\flutter\\fluttedex\\backend\\Fluttedex.Backend\\Domain\\Interfaces\\ITeamRepository.cs",
+              "RelativeToolTip": "Domain\\Interfaces\\ITeamRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T16:17:14.098Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Programacion\\flutter\\fluttedex\\backend\\Fluttedex.Backend\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Programacion\\flutter\\fluttedex\\backend\\Fluttedex.Backend\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB8AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T15:50:46.8Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Programacion\\flutter\\fluttedex\\backend\\Fluttedex.Backend\\Infrastructure\\Persistence\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Persistence\\AppDbContext.cs",
+              "ToolTip": "C:\\Programacion\\flutter\\fluttedex\\backend\\Fluttedex.Backend\\Infrastructure\\Persistence\\AppDbContext.cs",
+              "RelativeToolTip": "Infrastructure\\Persistence\\AppDbContext.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAmwA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T15:41:08.028Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserLoginDto.cs",
+              "DocumentMoniker": "C:\\Programacion\\flutter\\fluttedex\\backend\\Fluttedex.Backend\\Application\\Dtos\\UserLoginDto.cs",
+              "RelativeDocumentMoniker": "Application\\Dtos\\UserLoginDto.cs",
+              "ToolTip": "C:\\Programacion\\flutter\\fluttedex\\backend\\Fluttedex.Backend\\Application\\Dtos\\UserLoginDto.cs",
+              "RelativeToolTip": "Application\\Dtos\\UserLoginDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T17:45:50.532Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

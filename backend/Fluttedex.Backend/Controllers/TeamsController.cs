@@ -4,6 +4,8 @@ using Fluttedex.Backend.Domain.Interfaces;
 using Flutteedex.Backend.Application.Dtos;
 using Microsoft.AspNetCore.Mvc;
 
+using Microsoft.Extensions.Logging;
+
 namespace Fluttedex.Backend.Controllers
 {
     [ApiController]
@@ -12,20 +14,23 @@ namespace Fluttedex.Backend.Controllers
     {
         private readonly ITeamRepository _teamRepository;
 
-
+    
         [HttpPost]
-        public async Task<IActionResult> CreateTeam([FromBody] CreateTeamDto createTeamDto, CancellationToken cancellationToken)
+        public async Task<IActionResult> CreateTeam(
+            [FromBody] CreateTeamDto createTeamDto)
         {
             if (createTeamDto == null)
             {
                 return BadRequest("Team data is required.");
             }
 
-            Guid currentUserId = Guid.Parse("e13c11ee-497a-4c22-b38d-0e8fb942aa47"); // Replace with actual user ID retrieval logic
+            const int currentUserId = 1; // Replace with actual user ID retrieval logic
+
+            
 
             var team = new Team
             {
-                Id = currentUserId,
+                UserId = currentUserId,
                 TeamName = createTeamDto.Name,
                 CreatedAt = DateTime.UtcNow,
                 UpdatedAt = DateTime.UtcNow,
@@ -34,8 +39,9 @@ namespace Fluttedex.Backend.Controllers
                     PokemonId = id,
                     Position = index + 1, // Assuming position starts from 1
                 }).ToList(),
+                
             };
-            await _teamRepository.AddAsync(team, cancellationToken);
+            await _teamRepository.AddAsync(team);
 
             var teamDto = new TeamDto
             {
@@ -50,9 +56,9 @@ namespace Fluttedex.Backend.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<TeamDto>> GetTeamById(Guid id, CancellationToken cancellationToken)
+        public async Task<ActionResult<TeamDto>> GetTeamById(Guid id)
         {
-            var team = await _teamRepository.GetByIdAsync(id, cancellationToken);
+            var team = await _teamRepository.GetByIdAsync(id);
             if (team == null)
             {
                 return NotFound();
@@ -69,9 +75,9 @@ namespace Fluttedex.Backend.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<TeamDto>> GetAllTeams(CancellationToken cancellationToken)
+        public async Task<ActionResult<TeamDto>> GetAllTeams()
         {
-            var teams = await _teamRepository.GetAllAsync(cancellationToken);
+            var teams = await _teamRepository.GetAllAsync();
             var teamDtos = teams.Select(t => new TeamDto
             {
                 Id = t.Id,

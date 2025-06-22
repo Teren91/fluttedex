@@ -17,18 +17,21 @@ namespace Fluttedex.Backend.Infrastructure.Persistence
         {
             base.OnModelCreating(modelBuilder);
 
+            // Configurar la clave primaria compuesta para TeamPokemon
             modelBuilder.Entity<TeamPokemon>()
                 .HasKey(tp => new { tp.TeamId, tp.PokemonId });
 
+            // Configurar la relación uno a muchos entre User y Team
             modelBuilder.Entity<User>()
                 .HasMany(u => u.Teams)
                 .WithOne(t => t.User)
-                .HasForeignKey(u => u.UserId);
+                .HasForeignKey(t => t.UserId);
 
+            // Configurar la relación uno a muchos entre Team y TeamPokemon
             modelBuilder.Entity<Team>()
-                .HasMany(e => e.TeamPokemons)
-                .WithOne(t => t.Team)
-                .HasForeignKey(t => t.TeamId);
+                .HasMany(t => t.TeamPokemons)
+                .WithOne(tp => tp.Team)
+                .HasForeignKey(tp => tp.TeamId);
         }
     }
 }
