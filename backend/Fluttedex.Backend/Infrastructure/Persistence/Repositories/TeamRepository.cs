@@ -15,13 +15,21 @@ namespace Fluttedex.Backend.Infrastructure.Persistence.Repositories
         public async Task<Team?> GetByIdAsync(Guid id)
         {
             return await _context.Teams
-                .Include(t => t.TeamPokemon) // Assuming Team has a Members collection
+                .Include(t => t.TeamPokemons) // Assuming Team has a Members collection
                 .FirstOrDefaultAsync(t => t.Id == id);
         }
         public async Task<IEnumerable<Team>> GetAllAsync()
         {
             return await _context.Teams.ToListAsync();
         }
+
+        public async Task<Team?> GetByUserIdAsync(int userId)
+        {
+            return await _context.Teams
+                .Include(t => t.TeamPokemons) // Assuming Team has a Members collection
+                .FirstOrDefaultAsync(t => t.UserId == userId);
+        }
+
         public async Task AddAsync(Team team )
         {
             await _context.Teams.AddAsync(team);

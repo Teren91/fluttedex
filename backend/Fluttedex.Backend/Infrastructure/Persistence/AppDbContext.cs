@@ -17,21 +17,30 @@ namespace Fluttedex.Backend.Infrastructure.Persistence
         {
             base.OnModelCreating(modelBuilder);
 
-            // Configurar la clave primaria compuesta para TeamPokemon
-            modelBuilder.Entity<TeamPokemon>()
-                .HasKey(tp => new { tp.Id, tp.PokemonId });
 
-            // Configurar la relación uno a muchos entre User y Team
-            modelBuilder.Entity<User>()
-                .HasMany(u => u.Teams)
-                .WithOne(t => t.User)
+
+            // --- Relación User <-> Team ---
+            // Un equipo (Team) tiene un (HasOne) usuario (User).
+            // Un usuario (User) tiene muchos (WithMany) equipos (Teams).
+            // La clave foránea (ForeignKey) que los une es 'UserId' en la tabla de equipos.
+            modelBuilder.Entity<Team>()
+                .HasOne(t => t.User)
+                .WithMany(u => u.Teams)
                 .HasForeignKey(t => t.UserId);
 
-            // Configurar la relación uno a muchos entre Team y TeamPokemon
+            // --- Relación Team <-> TeamPokemon ---
+            // Un TeamPokemon tiene un (HasOne) equipo (Team).
+            // Un equipo (Team) tiene muchos (WithMany) TeamPokemons.
+            // La clave foránea (ForeignKey) es 'TeamId' en la tabla TeamPokemons.
             modelBuilder.Entity<Team>()
-                .HasOne(t => t.User) // Un equipo tiene un usuario
-                .WithMany(u => u.Teams) // Un usuario tiene muchos equipos
-                .HasForeignKey(t => t.UserId); // La clave foránea es UserId
+                .HasMany(t => t.TeamPokemons)
+                .WithOne(tp => tp.Team)
+                .HasForeignKey(tp => tp.Id);
+
+            // --- Clave Primaria Compuesta para TeamPokemon ---
+            // La tabla TeamPokemons tiene una clave primaria formada por dos columnas.
+            modelBuilder.Entity<TeamPokemon>()
+                .HasKey(tp => new { tp.Id, tp.PokemonId });
         }
     }
 }

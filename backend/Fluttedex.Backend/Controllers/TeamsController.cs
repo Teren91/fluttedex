@@ -6,7 +6,6 @@ using Flutteedex.Backend.Application.Dtos;
 using Microsoft.AspNetCore.Mvc;
 
 using Microsoft.Extensions.Logging;
-using Fluttedex.Backend.Infrastructure.Persistence; // Added for AppDbContext
 using Microsoft.EntityFrameworkCore; // Added for Include/FirstOrDefaultAsync
 
 namespace Fluttedex.Backend.Controllers
@@ -44,7 +43,7 @@ namespace Fluttedex.Backend.Controllers
                 TeamName = createTeamDto.Name,
                 CreatedAt = DateTime.UtcNow,
                 UpdatedAt = DateTime.UtcNow,
-                TeamPokemon = createTeamDto.PokemonIds.Select((id, index) => new TeamPokemon
+                TeamPokemons = createTeamDto.PokemonIds.Select((id, index) => new TeamPokemon
                 {
                     PokemonId = id,
                     Position = index + 1, // Assuming position starts from 1
@@ -59,7 +58,7 @@ namespace Fluttedex.Backend.Controllers
                 Id = team.Id,
                 Name = team.TeamName,
                 IsFavorite = team.IsFavorite,
-                PokemonIds = team.TeamPokemon.Select(tp => tp.PokemonId).ToList()
+                PokemonIds = team.TeamPokemons.Select(tp => tp.PokemonId).ToList()
             };
 
 
@@ -80,7 +79,7 @@ namespace Fluttedex.Backend.Controllers
                 Id = team.Id,
                 Name = team.TeamName,
                 IsFavorite = team.IsFavorite,
-                PokemonIds = team.TeamPokemon.Select(tp => tp.PokemonId).ToList()
+                PokemonIds = team.TeamPokemons.Select(tp => tp.PokemonId).ToList()
             };
             return Ok(teamDto);
         }
@@ -94,9 +93,68 @@ namespace Fluttedex.Backend.Controllers
                 Id = t.Id,
                 Name = t.TeamName,
                 IsFavorite = t.IsFavorite,
-                PokemonIds = t.TeamPokemon.Select(tp => tp.PokemonId).ToList()
+                PokemonIds = t.TeamPokemons.Select(tp => tp.PokemonId).ToList()
             }).ToList();
             return Ok(teamDtos);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<TeamDto>>> GetUserTeams ()
+        {
+            //Por el momento usamos un userId fijo, en un futuro se debe obtener del contexto de autenticación
+            const int currentUserId = 1; // Replace with actual user ID retrieval logic
+            var teams = await _teamRepository.GetByUserIdAsync(currentUserId);
+            
+            if (teams == null)
+            {
+                return NotFound();
+            }
+
+            var teamDtos = new TeamDto
+            {
+                Id = teams.Id,
+                Name = teams.TeamName,
+                IsFavorite = teams.IsFavorite,
+                PokemonIds = teams.TeamPokemons.Select(t => t.PokemonId).ToList()
+            };
+
+            return Ok(teamDtos);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateTeam(Guid id, [FromBody] UpdateTeamDto updateTeamDto)
+        {
+            var team = await _teamRepository.GetByIdAsync(id);
+
+            if (team == null)
+            {
+                return NotFound();
+            }
+
+            team.TeamName = updateTeamDto.Name;
+            team.IsFavorite = updateTeamDto.IsFavorite;
+
+            team.TeamPokemons.Clear();
+            foreach(var (pokemonId, index) in updateTeamDto.PokemonIds.Select((value, i) => (value, i)))
+            {
+                team.TeamPokemons.Add(new TeamPokemon { PokemonId = pokemonId, Position = index + 1 });
+            }
+
+            await _teamRepository.UpdateAsync(team);
+
+            return NoContent();
+        }
+
+        [HttpDelete("id")]
+        public async Task<IActionResult> DeleteTeam(Guid id)
+        {
+            var team = await _teamRepository.GetByIdAsync(id);
+            if (team == null)
+            {
+                return NotFound();
+            }
+            await _teamRepository.DeleteAsync(id);
+            return NoContent();
         }
     }
 }
