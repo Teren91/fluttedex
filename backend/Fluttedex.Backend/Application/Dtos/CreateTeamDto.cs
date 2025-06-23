@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Flutteedex.Backend.Application.Dtos
+namespace Fluttedex.Backend.Application.Dtos
 {
     public class CreateTeamDto
     {

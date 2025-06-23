@@ -2,7 +2,6 @@ using Fluttedex.Backend.Application.Dtos;
 using Fluttedex.Backend.Domain.Entities;
 using Fluttedex.Backend.Domain.Interfaces;
 using Fluttedex.Backend.Infrastructure.Persistence;
-using Flutteedex.Backend.Application.Dtos;
 using Microsoft.AspNetCore.Mvc;
 
 using Microsoft.Extensions.Logging;
@@ -85,21 +84,7 @@ namespace Fluttedex.Backend.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<TeamDto>> GetAllTeams()
-        {
-            var teams = await _teamRepository.GetAllAsync();
-            var teamDtos = teams.Select(t => new TeamDto
-            {
-                Id = t.Id,
-                Name = t.TeamName,
-                IsFavorite = t.IsFavorite,
-                PokemonIds = t.TeamPokemons.Select(tp => tp.PokemonId).ToList()
-            }).ToList();
-            return Ok(teamDtos);
-        }
-
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<TeamDto>>> GetUserTeams ()
+        public async Task<ActionResult<IEnumerable<TeamDto>>> GetUserTeams (int userId)
         {
             //Por el momento usamos un userId fijo, en un futuro se debe obtener del contexto de autenticación
             const int currentUserId = 1; // Replace with actual user ID retrieval logic
