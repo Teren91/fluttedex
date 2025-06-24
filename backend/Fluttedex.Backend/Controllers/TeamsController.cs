@@ -5,10 +5,13 @@ using Fluttedex.Backend.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Mvc;
 
 using Microsoft.Extensions.Logging;
-using Microsoft.EntityFrameworkCore; // Added for Include/FirstOrDefaultAsync
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims; // Added for Include/FirstOrDefaultAsync
 
 namespace Fluttedex.Backend.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class TeamsController : ControllerBase
@@ -32,13 +35,18 @@ namespace Fluttedex.Backend.Controllers
                 return BadRequest("Team data is required.");
             }
 
-            const int currentUserId = 1; // Replace with actual user ID retrieval logic
+            var userIdString = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            
+            if(string.IsNullOrEmpty(userIdString))
+            {
+                return Unauthorized();
+            }
+
+            var userId = int.Parse(userIdString);
 
             var team = new Team
             {
-                UserId = currentUserId,
+                UserId = userId,
                 TeamName = createTeamDto.Name,
                 CreatedAt = DateTime.UtcNow,
                 UpdatedAt = DateTime.UtcNow,
@@ -84,11 +92,18 @@ namespace Fluttedex.Backend.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<TeamDto>>> GetUserTeams (int userId)
+        public async Task<ActionResult<IEnumerable<TeamDto>>> GetUserTeams ()
         {
-            //Por el momento usamos un userId fijo, en un futuro se debe obtener del contexto de autenticación
-            const int currentUserId = 1; // Replace with actual user ID retrieval logic
-            var teams = await _teamRepository.GetByUserIdAsync(currentUserId);
+            var userIdString = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (string.IsNullOrEmpty(userIdString))
+            {
+                return Unauthorized();
+            }
+
+            var userId = int.Parse(userIdString);
+
+            var teams = await _teamRepository.GetByUserIdAsync(userId);
             
             if (teams == null)
             {
@@ -114,6 +129,20 @@ namespace Fluttedex.Backend.Controllers
             if (team == null)
             {
                 return NotFound();
+            }
+
+            var userIdString = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (string.IsNullOrEmpty(userIdString))
+            {
+                return Unauthorized();
+            }
+
+            var userId = int.Parse(userIdString);
+
+            if (team.UserId != userId)
+            {
+                return Forbid();
             }
 
             team.TeamName = updateTeamDto.Name;

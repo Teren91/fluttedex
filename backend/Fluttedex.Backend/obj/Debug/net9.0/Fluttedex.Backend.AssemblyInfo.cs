@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Fluttedex.Backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9175c5edc4f381a00607419ea9571982c421a0b5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f05784d39cdce57936ef581f92fa7060d949c6c4")]
 [assembly: System.Reflection.AssemblyProductAttribute("Fluttedex.Backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Fluttedex.Backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
