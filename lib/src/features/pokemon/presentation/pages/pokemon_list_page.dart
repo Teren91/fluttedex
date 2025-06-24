@@ -4,6 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttedex/src/features/pokemon/presentation/bloc/pokemon_bloc.dart';
 import 'package:fluttedex/src/features/pokemon/presentation/bloc/pokemon_event.dart';
 import 'package:fluttedex/src/features/pokemon/presentation/bloc/pokemon_state.dart';
+import 'package:fluttedex/src/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:fluttedex/src/features/auth/presentation/bloc/auth_event.dart';
 
 class PokemonListPage extends StatefulWidget {
   const PokemonListPage({super.key});
@@ -31,6 +33,12 @@ class _PokemonListPageState extends State<PokemonListPage> {
             onPressed: () {
               // Recargar la lista de Pokémon
               context.read<PokemonBloc>().add(FetchPokemons());
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.logout),
+            onPressed: () {
+              context.read<AuthBloc>().add(LogoutRequested());
             },
           ),
         ],

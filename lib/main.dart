@@ -1,5 +1,6 @@
+import 'package:fluttedex/src/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:fluttedex/src/features/auth/presentation/pages/auth_wrapper_page.dart';
 import 'package:fluttedex/src/features/pokemon/presentation/bloc/pokemon_event.dart';
-import 'package:fluttedex/src/features/pokemon/presentation/pages/pokemon_list_page.dart';
 import 'package:fluttedex/src/injection_container.dart' as di;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -22,17 +23,23 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Fluttedex',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<PokemonBloc>(
+          create: (context) => di.sl<PokemonBloc>()..add(FetchPokemons()),
+        ),
+        BlocProvider<AuthBloc>(
+          create: (context) => di.sl<AuthBloc>(),
+        ),
+      ],
+      child: MaterialApp(
+        title: 'Fluttedex',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
+        ),
+        home: const AuthWrapperPage(),
       ),
-      builder: (context, child) => BlocProvider<PokemonBloc>(
-        create: (context) => di.sl<PokemonBloc>()..add(FetchPokemons()),
-        child: child!,
-      ),
-      home: const PokemonListPage(),
     );
   }
 }
